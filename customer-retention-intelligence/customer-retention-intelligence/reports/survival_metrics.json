@@ -1,0 +1,66 @@
+{
+  "km_survival": [
+    {
+      "months": 6,
+      "survival_probability": 0.8848
+    },
+    {
+      "months": 12,
+      "survival_probability": 0.8432
+    },
+    {
+      "months": 24,
+      "survival_probability": 0.7887
+    },
+    {
+      "months": 36,
+      "survival_probability": 0.7485
+    },
+    {
+      "months": 48,
+      "survival_probability": 0.7088
+    },
+    {
+      "months": 60,
+      "survival_probability": 0.6644
+    },
+    {
+      "months": 72,
+      "survival_probability": 0.5928
+    }
+  ],
+  "logrank_contract": {
+    "test_statistic": 2352.8725382593398,
+    "p_value": 0.0,
+    "df": 2
+  },
+  "cox_concordance": 0.729175037470144,
+  "cox_concordance_with_contract_dummies": 0.8692374115952981,
+  "ph_violations_stratified": [
+    "dependents",
+    "multiple_lines",
+    "online_backup",
+    "online_security",
+    "partner",
+    "pay_electronic_check",
+    "pay_mailed_check",
+    "streaming_movies",
+    "streaming_tv",
+    "tech_support"
+  ],
+  "ph_violations_with_contract_dummies": [
+    "contract_one_year",
+    "dependents",
+    "multiple_lines",
+    "online_backup",
+    "online_security",
+    "partner",
+    "pay_electronic_check",
+    "pay_mailed_check",
+    "streaming_movies",
+    "streaming_tv",
+    "tech_support"
+  ],
+  "n_events": 1869,
+  "n_censored": 5174
+}

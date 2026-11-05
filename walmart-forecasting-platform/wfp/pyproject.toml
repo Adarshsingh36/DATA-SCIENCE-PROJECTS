@@ -1,0 +1,17 @@
+[project]
+name = "walmartfc"
+version = "1.0.0"
+description = "Weekly demand forecasting, hierarchical reconciliation and inventory optimisation on Walmart Store Sales"
+requires-python = ">=3.10"
+dependencies = ["numpy", "pandas", "scipy", "pyarrow", "pyyaml", "matplotlib", "lightgbm", "prophet", "ortools", "plotly", "dash"]
+
+[project.optional-dependencies]
+tft = ["torch", "lightning", "pytorch-forecasting"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:dash"

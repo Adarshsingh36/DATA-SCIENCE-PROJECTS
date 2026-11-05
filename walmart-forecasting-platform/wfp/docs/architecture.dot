@@ -1,0 +1,23 @@
+digraph G {
+  rankdir=LR; fontname="Helvetica"; node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, color="#1f4e79", fillcolor="#eaf1f8"]; edge [color="#555555"];
+  subgraph cluster_data { label="1  Data (read-only)"; style="rounded"; color="#999999";
+    raw [label="Kaggle CSVs\ntrain.csv | stores.csv | features.csv", fillcolor="#fdf2e0"];
+    prep [label="validate + merge\n(Store ; Store,Date)\npreprocessing log"]; }
+  subgraph cluster_feat { label="2  Panel & features (past-only)"; style="rounded"; color="#999999";
+    panel [label="weekly panel 3,331 series x 143 weeks\n+ hierarchy S (3,461 nodes)"];
+    feat [label="direct-horizon features\nlags 1/2/4/8/12/52, rolling mean/std,\nholiday/calendar, exogenous at origin"]; }
+  subgraph cluster_models { label="3  Forecasting (chronological folds)"; style="rounded"; color="#999999";
+    base [label="Baselines\nnaive | seasonal naive"];
+    lgbm [label="Global LightGBM\npoint + q10/q90\n(bottom + aggregate nodes)"];
+    rep [label="Representative subset\nProphet | Temporal Fusion Transformer"];
+    rec [label="Hierarchical reconciliation\nbottom-up | OLS | WLS | MinT-shrink\n(method chosen on validation)"];
+    pi [label="Prediction intervals\nCQR + split-conformal"]; }
+  subgraph cluster_eval { label="4  Evaluation"; style="rounded"; color="#999999";
+    ev [label="WAPE | RMSSE | MAE | RMSE | bias\ncoverage | interval score\nper level, horizon, fold"]; }
+  subgraph cluster_ops { label="5  Decisions & delivery"; style="rounded"; color="#999999";
+    inv [label="OR-Tools (SCIP) inventory MILP\nper store, scenario assumptions\nfrom config"];
+    dash [label="Plotly Dash dashboard\nforecasts | accuracy | hierarchy | inventory", fillcolor="#e6f4ea"]; }
+  raw -> prep -> panel -> feat; feat -> base; feat -> lgbm; panel -> rep;
+  lgbm -> rec -> pi; base -> ev; rep -> ev; rec -> ev; pi -> ev;
+  pi -> inv; ev -> dash; inv -> dash; pi -> dash;
+}

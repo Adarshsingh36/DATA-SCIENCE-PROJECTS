@@ -1,0 +1,3 @@
+56f4892cbfcd018afcb8703f8885bd520ef4bfdc4ee5d2f856cac6a1a3330de6  data/raw/features.csv
+88d146882923f04c85a24e0e0260a06ec09a173f3fb976a41b77b0d6003044d3  data/raw/stores.csv
+65834f65a2ddccc85d8f4bf6544f73625be553f8ca5f8fdee976b9d0c900e95d  data/raw/train.csv

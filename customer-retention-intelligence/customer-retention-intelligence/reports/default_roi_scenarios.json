@@ -1,0 +1,62 @@
+[
+  {
+    "strategy": "Uplift-ranked, economically worthwhile only",
+    "n_targeted": 316,
+    "baseline_churn_prob": 0.7631405671934343,
+    "incremental_retention_prob": 0.2804777924178894,
+    "expected_customers_retained": 88.63098240405304,
+    "expected_retained_revenue": 90433.5997255934,
+    "incremental_benefit": 36173.43989023736,
+    "discount_cost": 16767.518805493037,
+    "campaign_cost": 19927.51880549304,
+    "fixed_offer_cost": 3160.0,
+    "net_incremental_benefit": 16245.921084744317,
+    "roi_pct": 81.52505709976353,
+    "is_simulated_uplift": true
+  },
+  {
+    "strategy": "Uplift-ranked (ignore economics)",
+    "n_targeted": 315,
+    "baseline_churn_prob": 0.7369447945593165,
+    "incremental_retention_prob": 0.28855595937187545,
+    "expected_customers_retained": 90.89512720214077,
+    "expected_retained_revenue": 87808.06809814041,
+    "incremental_benefit": 35123.227239256164,
+    "discount_cost": 16802.975164365424,
+    "campaign_cost": 19952.975164365424,
+    "fixed_offer_cost": 3150.0,
+    "net_incremental_benefit": 15170.252074890741,
+    "roi_pct": 76.03002534671481,
+    "is_simulated_uplift": true
+  },
+  {
+    "strategy": "Highest churn risk",
+    "n_targeted": 351,
+    "baseline_churn_prob": 0.7860423519389522,
+    "incremental_retention_prob": 0.2555411036734334,
+    "expected_customers_retained": 89.69492738937512,
+    "expected_retained_revenue": 88997.13281449977,
+    "incremental_benefit": 35598.85312579991,
+    "discount_cost": 16414.6973031486,
+    "campaign_cost": 19924.6973031486,
+    "fixed_offer_cost": 3510.0,
+    "net_incremental_benefit": 15674.155822651312,
+    "roi_pct": 78.66697086622442,
+    "is_simulated_uplift": true
+  },
+  {
+    "strategy": "Random",
+    "n_targeted": 284,
+    "baseline_churn_prob": 0.27752056478444975,
+    "incremental_retention_prob": 0.07794472456047549,
+    "expected_customers_retained": 22.13630177517504,
+    "expected_retained_revenue": 19706.557398598787,
+    "incremental_benefit": 7882.622959439515,
+    "discount_cost": 17155.655765442334,
+    "campaign_cost": 19995.655765442334,
+    "fixed_offer_cost": 2840.0,
+    "net_incremental_benefit": -12113.032806002819,
+    "roi_pct": -60.578322352084456,
+    "is_simulated_uplift": true
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "k": 4,
+  "silhouette": 0.3513709277791423,
+  "k_scores": [
+    {
+      "k": 2,
+      "inertia": 28576.0589,
+      "silhouette": 0.2995
+    },
+    {
+      "k": 3,
+      "inertia": 20492.5656,
+      "silhouette": 0.3278
+    },
+    {
+      "k": 4,
+      "inertia": 15853.1826,
+      "silhouette": 0.3514
+    },
+    {
+      "k": 5,
+      "inertia": 14001.769,
+      "silhouette": 0.3069
+    },
+    {
+      "k": 6,
+      "inertia": 12294.1666,
+      "silhouette": 0.3042
+    },
+    {
+      "k": 7,
+      "inertia": 11028.2663,
+      "silhouette": 0.2928
+    },
+    {
+      "k": 8,
+      "inertia": 10130.5751,
+      "silhouette": 0.2925
+    }
+  ],
+  "profiles": [
+    {
+      "cluster_id": 0,
+      "n_customers": 2226,
+      "tenure_months": 27.11,
+      "monthly_charges": 28.435,
+      "clv": 280.686,
+      "service_count": 1.791,
+      "churn_probability": 0.128,
+      "surv_prob_12m": 0.846,
+      "actual_churn_rate": 0.13,
+      "segment_label": "Low-value customers"
+    },
+    {
+      "cluster_id": 1,
+      "n_customers": 1705,
+      "tenure_months": 53.934,
+      "monthly_charges": 88.42,
+      "clv": 980.554,
+      "service_count": 6.595,
+      "churn_probability": 0.126,
+      "surv_prob_12m": 0.92,
+      "actual_churn_rate": 0.116,
+      "segment_label": "High-value loyal"
+    },
+    {
+      "cluster_id": 2,
+      "n_customers": 2158,
+      "tenure_months": 11.463,
+      "monthly_charges": 76.93,
+      "clv": 799.791,
+      "service_count": 3.968,
+      "churn_probability": 0.566,
+      "surv_prob_12m": 0.88,
+      "actual_churn_rate": 0.566,
+      "segment_label": "High-value at-risk"
+    },
+    {
+      "cluster_id": 3,
+      "n_customers": 954,
+      "tenure_months": 53.404,
+      "monthly_charges": 79.714,
+      "clv": 363.712,
+      "service_count": 5.67,
+      "churn_probability": 0.16,
+      "surv_prob_12m": 0.373,
+      "actual_churn_rate": 0.167,
+      "segment_label": "Mid-value, low-survival (watch list)"
+    }
+  ]
+}

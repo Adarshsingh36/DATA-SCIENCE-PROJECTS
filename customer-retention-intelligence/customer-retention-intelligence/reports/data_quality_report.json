@@ -1,0 +1,27 @@
+{
+  "rows_raw_table": 7043,
+  "rows_customers_table": 7043,
+  "backend": "sqlite",
+  "quality": {
+    "n_rows": 7043,
+    "n_columns": 33,
+    "duplicate_customer_ids": 0,
+    "duplicate_rows": 0,
+    "missing_by_column": {
+      "churn_reason": 5174
+    },
+    "blank_total_charges": 11,
+    "blank_total_charges_all_zero_tenure": true,
+    "invalid_categories": {},
+    "range_violations": {},
+    "churn_label_value_mismatch": 0,
+    "total_charges_inconsistent_gt_50pct": 2,
+    "churn_rate": 0.2653698707936959,
+    "errors": [],
+    "warnings": [
+      "11 blank Total Charges (all tenure=0: True); imputed as 0.0",
+      "2 rows where total_charges differs >50% from tenure*monthly (plausible: plan changes over time); kept as observed."
+    ],
+    "passed": true
+  }
+}

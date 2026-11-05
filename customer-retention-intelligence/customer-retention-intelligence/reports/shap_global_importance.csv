@@ -1,0 +1,49 @@
+feature,mean_abs_shap
+contract_months,0.883489655962504
+dependents,0.569572881496716
+tenure_months,0.4251930659396138
+internet_service_Fiber optic,0.21977639940859828
+electronic_check,0.16322863039526922
+has_internet,0.15633007985069747
+paperless_billing,0.09121753102682244
+monthly_charges,0.07470403579313635
+streaming_movies,0.06957585165374996
+streaming_tv,0.06489201619686163
+total_charges,0.06434131738727476
+avg_monthly_spend,0.06424708519235696
+online_security,0.06263535205927451
+charge_ratio,0.0475102980740044
+partner,0.045302395847821246
+charge_per_service,0.044663740829515526
+tech_support,0.04363820185433865
+multiple_lines,0.04363680513364062
+phone_service,0.02541517008364503
+engagement_proxy,0.017064152623159086
+payment_method_Mailed check,0.013756099724546356
+senior_citizen,0.008217553849894196
+online_backup,0.005416397751668498
+gender_Female,0.00498788278769612
+contract_One year,0.004136627222590763
+addon_count,0.002496998010893013
+internet_service_DSL,0.0022464878259283363
+is_month_to_month,0.0016813536301144667
+payment_method_Credit card (automatic),0.0012231364606825675
+has_protection_bundle,0.0011772548005173325
+monthly_charge_category_High,0.0010975917737279719
+tenure_group_25-48m,0.0009729136980742279
+payment_method_Bank transfer (automatic),0.0009685416627051322
+service_count,0.0009318944429018343
+tenure_group_13-24m,0.0007250226265312105
+auto_pay,0.00036303910472667075
+device_protection,0.0003369169292761375
+service_adoption_rate,0.0
+gender_Male,0.0
+contract_Two year,0.0
+payment_method_Electronic check,0.0
+internet_service_No,0.0
+contract_Month-to-month,0.0
+tenure_group_0-12m,0.0
+tenure_group_49-72m,0.0
+monthly_charge_category_Low,0.0
+monthly_charge_category_Medium,0.0
+monthly_charge_category_Premium,0.0

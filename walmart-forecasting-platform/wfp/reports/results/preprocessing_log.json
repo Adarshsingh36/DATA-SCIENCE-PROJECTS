@@ -1,0 +1,62 @@
+[
+  {
+    "step": "features window",
+    "decision": "dropped features rows after last training date 2012-10-26",
+    "affected": 1755,
+    "rationale": "Those rows belong to Kaggle's hidden test period; they contain NaN CPI/Unemployment and no sales."
+  },
+  {
+    "step": "MarkDown1-5 NaN",
+    "decision": "filled with 0 and added indicator `markdown_available` (1 from 2011-11-11)",
+    "affected": 21952,
+    "rationale": "Structural missingness: markdowns were not recorded before the programme. Median-filling (as in the reference notebook) would invent promotions. The indicator lets models distinguish 'no markdown' from 'not recorded'."
+  },
+  {
+    "step": "MarkDown negatives",
+    "decision": "clipped to 0",
+    "affected": 23,
+    "rationale": "Negative promotional spend is not meaningful."
+  },
+  {
+    "step": "CPI/Unemployment NaN",
+    "decision": "forward-filled within store (past-only); none remain inside the training window",
+    "affected": 0,
+    "rationale": "No global median/mean imputation, which would leak future/global statistics."
+  },
+  {
+    "step": "merge",
+    "decision": "train LEFT JOIN stores ON Store; LEFT JOIN features ON (Store, Date); IsHoliday taken from train (verified identical to features.IsHoliday)",
+    "affected": 421570,
+    "rationale": "validate='many_to_one' asserts no row multiplication."
+  },
+  {
+    "step": "negative Weekly_Sales",
+    "decision": "retained, not clipped or dropped",
+    "affected": 1285,
+    "rationale": "Returns/adjustments are genuine records; WAPE/MAE/RMSE are computed on signed values."
+  },
+  {
+    "step": "outliers / spikes",
+    "decision": "NOT removed; investigated in EDA (see docs/eda.md)",
+    "affected": 0,
+    "rationale": "The reference notebook dropped |z|>2.5 rows, which deletes exactly the holiday peaks inventory planning needs."
+  },
+  {
+    "step": "target scaling",
+    "decision": "no global normalisation of Weekly_Sales; models forecast dollars",
+    "affected": 0,
+    "rationale": "Inside LightGBM the target is divided by a past-only per-series scale and multiplied back (invertible, dollars out)."
+  },
+  {
+    "step": "grid completeness",
+    "decision": "series x week grid 3331 x 143; unobserved cells kept as NaN (not zero) for features/evaluation; treated as 0 only when summing to aggregates",
+    "affected": 54763,
+    "rationale": "11.5% of cells are unobserved (series start late, end early or have gaps)."
+  },
+  {
+    "step": "geographic level",
+    "decision": "hierarchy group level = Type (state proxy; no state in Walmart files)",
+    "affected": 3,
+    "rationale": "stores.csv has no state/region. Supply config/store_state_mapping.csv (Store,State) to use real states; no mapping is invented."
+  }
+]

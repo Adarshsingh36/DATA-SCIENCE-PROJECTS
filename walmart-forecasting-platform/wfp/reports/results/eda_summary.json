@@ -1,0 +1,38 @@
+{
+  "holiday_uplift_vs_prev4wk_mean": {
+    "Super Bowl": 0.15488534868625536,
+    "Labor Day": 0.0016124759875160155,
+    "Thanksgiving": 0.4318874857830943,
+    "Christmas wk": -0.29390182564887224,
+    "Week before Christmas": 0.12231844020139304
+  },
+  "top5_dept_share": 0.2854553578976013,
+  "top10_store_share": 0.3905053286413301,
+  "type_share": {
+    "A": 0.642849034748065,
+    "B": 0.29696240253550393,
+    "C": 0.060188562716431
+  },
+  "spikes": {
+    "definition": "robust z > 5 vs series median/MAD",
+    "n": 9204,
+    "share_in_holiday_or_xmas_weeks": 0.4895697522816167,
+    "share_of_all_weeks_that_are_such": 0.11188811188811189,
+    "lift": 4.375529661016949
+  },
+  "negative_sales": {
+    "n": 1285,
+    "share": 0.0030481296107408022,
+    "total_value": -88161.56
+  },
+  "missing_share_of_grid": 0.11496789011048993,
+  "series_with_full_history": 2660,
+  "series_total": 3331,
+  "pooled_corr_store_total_vs_exog_(raw, confounded by season)": {
+    "Temperature": -0.10813670468190159,
+    "Fuel_Price": -0.008891181571275811,
+    "CPI": 0.06111167735105423,
+    "Unemployment": -0.0564988784224512,
+    "MarkDown_total": 0.14371440668532745
+  }
+}

@@ -1,0 +1,5 @@
+cluster_id,n_customers,tenure_months,monthly_charges,clv,service_count,churn_probability,surv_prob_12m,actual_churn_rate,segment_label
+0,2226,27.11,28.435,280.686,1.791,0.128,0.846,0.13,Low-value customers
+1,1705,53.934,88.42,980.554,6.595,0.126,0.92,0.116,High-value loyal
+2,2158,11.463,76.93,799.791,3.968,0.566,0.88,0.566,High-value at-risk
+3,954,53.404,79.714,363.712,5.67,0.16,0.373,0.167,"Mid-value, low-survival (watch list)"

@@ -1,0 +1,67 @@
+# Central configuration. Everything below is a *modelling choice or scenario assumption*,
+# not a fact about Walmart. Change values here; nothing is hard-coded in the code.
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  artifacts_dir: artifacts
+
+forecast:
+  horizon: 13                 # weeks ahead
+  val_weeks: 13               # chronological validation window directly before each test window
+  folds:                      # test windows (first week, inclusive); each is 'horizon' weeks long
+    holiday: "2011-10-28"     # covers Thanksgiving + Christmas run-up (hardest regime)
+    latest:  "2012-08-03"     # last 13 weeks available in train.csv (headline fold)
+  lags: [1, 2, 4, 8, 12, 52]  # weeks; 1..12 are relative to the forecast origin, 52 is target-aligned
+  rolling_windows: [4, 8, 13, 26, 52]
+  vol_windows: [4, 8, 13, 26]
+  origin_stride: 5            # training origins every N weeks (memory/compute trade-off)
+  min_history_weeks: 8        # series need this many observations before an origin to be modelled
+  known_future_markdowns: false   # if true, markdowns of the *target* week are used (assumes promo plan is known ahead)
+  scale_floor: 1.0            # floor for the past-only series scale used inside the model (dollars)
+  quantiles: [0.1, 0.5, 0.9]
+  interval_coverage: 0.8
+
+hierarchy:
+  # Walmart's files contain NO state. Provide config/store_state_mapping.csv (Store,State) to use real states.
+  # Otherwise the geographic level falls back to store Type (A/B/C), clearly labelled as a proxy.
+  state_mapping_csv: config/store_state_mapping.csv
+  reconciliation: [bottom_up, ols, wls_struct, mint_shrink, mint_shrink_insample]
+  default_method: bottom_up   # operational default (no estimated covariance). 'validation_selected' = per-fold validation winner
+
+lightgbm:
+  n_estimators: 300
+  learning_rate: 0.08
+  num_leaves: 31
+  min_child_samples: 200
+  feature_fraction: 0.8
+  bagging_fraction: 0.5
+  bagging_freq: 1
+  lambda_l2: 5.0
+  early_stopping_rounds: 40
+  seed: 42
+
+representative:
+  n_series: 100               # stratified by past-only revenue decile and store type; complete history only
+  prophet: true
+  tft:
+    enabled: true
+    encoder_length: 26
+    hidden_size: 16
+    attention_heads: 2
+    dropout: 0.1
+    batch_size: 128
+    max_epochs: 8
+    learning_rate: 0.01
+
+inventory:
+  # ALL numbers are scenario assumptions: the dataset has no unit costs, stock levels, suppliers or capacities.
+  # Demand and inventory are measured in retail-sales dollars (the only unit the data supports).
+  lead_time_weeks: 1
+  opening_cover_weeks: 1.0            # opening inventory = this many weeks of p50 forecast
+  ordering_cost: 150.0                # fixed $ per order placed (per store-department)
+  holding_cost_rate_weekly: 0.005     # fraction of inventory value held per week
+  stockout_penalty_rate: 0.30         # $ penalty per $ of unmet demand (lost margin + goodwill)
+  storage_capacity_per_sqft: 20.0     # max total inventory value per store sq ft
+  scenario_weights: {low: 0.25, mid: 0.5, high: 0.25}   # over q10 / q50 / q90 demand paths
+  time_limit_seconds_per_store: 20
+  min_order_quantity: 0.0

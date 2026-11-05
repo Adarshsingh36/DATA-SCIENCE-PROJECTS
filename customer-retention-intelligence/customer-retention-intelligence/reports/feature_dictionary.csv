@@ -1,0 +1,40 @@
+feature,type,description
+tenure_months,observed,source column (cleaned)
+monthly_charges,observed,source column (cleaned)
+total_charges,observed,source column (cleaned)
+senior_citizen,observed,source column (cleaned)
+partner,observed,source column (cleaned)
+dependents,observed,source column (cleaned)
+phone_service,observed,source column (cleaned)
+multiple_lines,observed,source column (cleaned)
+online_security,observed,source column (cleaned)
+online_backup,observed,source column (cleaned)
+device_protection,observed,source column (cleaned)
+tech_support,observed,source column (cleaned)
+streaming_tv,observed,source column (cleaned)
+streaming_movies,observed,source column (cleaned)
+paperless_billing,observed,source column (cleaned)
+gender,observed,source column (cleaned)
+internet_service,observed,source column (cleaned)
+contract,observed,source column (cleaned)
+payment_method,observed,source column (cleaned)
+avg_monthly_spend,engineered proxy,total_charges / tenure (monthly_charges if tenure=0)
+charge_ratio,engineered proxy,current monthly_charges / avg_monthly_spend (>1 suggests recent price/plan increase)
+contract_months,engineered proxy,contract term length in months (1/12/24)
+is_month_to_month,engineered proxy,contract == Month-to-month
+service_count,engineered proxy,"count of subscribed services (phone, multi-line, internet, 6 add-ons)"
+addon_count,engineered proxy,count of 6 internet add-ons subscribed
+has_internet,engineered proxy,internet_service != No
+has_protection_bundle,engineered proxy,online security AND tech support
+auto_pay,engineered proxy,payment by automatic bank transfer / credit card
+electronic_check,engineered proxy,payment by electronic check
+service_adoption_rate,engineered proxy,addon_count / 6 for internet customers
+charge_per_service,engineered proxy,monthly_charges / service_count
+engagement_proxy,engineered proxy,"(service_count/9) * ln(1+tenure) * (1+0.25*auto_pay): PROXY, not measured engagement"
+tenure_group,engineered proxy,0-12m / 13-24m / 25-48m / 49-72m
+monthly_charge_category,engineered proxy,"Low <35, Medium 35-70, High 70-90, Premium >90"
+churn_label,EXCLUDED (leakage),target or target-derived; never used as a feature
+churn_value,EXCLUDED (leakage),target or target-derived; never used as a feature
+churn_score,EXCLUDED (leakage),target or target-derived; never used as a feature
+churn_reason,EXCLUDED (leakage),target or target-derived; never used as a feature
+cltv,EXCLUDED (leakage),target or target-derived; never used as a feature

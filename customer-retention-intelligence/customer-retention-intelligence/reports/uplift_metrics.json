@@ -1,0 +1,214 @@
+{
+  "n_customers": 7043,
+  "n_treated": 3471,
+  "n_control": 3572,
+  "retention_treated": 0.8176318063958513,
+  "retention_control": 0.7337625979843225,
+  "simulated_average_treatment_effect": 0.08386920841152878,
+  "mean_reference_effect": 0.07648724236473335,
+  "mean_estimated_ite_selected": 0.07311325863605986,
+  "share_positive_uplift": 0.7512423683089593,
+  "selected_learner": "S_learner",
+  "evaluation_holdout": {
+    "qini": {
+      "S_learner": 0.28535704917817833,
+      "T_learner": 0.18381790350427074,
+      "Churn_risk_baseline": 0.2824010086773805,
+      "Random": 0.05216829031462707
+    },
+    "auuc": {
+      "S_learner": 0.79499021793682,
+      "T_learner": 0.6957657732750049,
+      "Churn_risk_baseline": 0.786908185726997,
+      "Random": 0.5501357142955756
+    },
+    "spearman_vs_reference_effect": {
+      "S_learner": 0.9165088469702596,
+      "T_learner": 0.7713185084904723,
+      "Churn_risk_baseline": 0.9688036272773053,
+      "Random": -0.007993892833716388
+    }
+  },
+  "uplift_deciles_holdout_selected": [
+    {
+      "decile": 1,
+      "n": 212,
+      "mean_predicted_ite": 0.2643,
+      "retention_treated": 0.6204,
+      "retention_control": 0.375,
+      "observed_uplift": 0.2454
+    },
+    {
+      "decile": 2,
+      "n": 211,
+      "mean_predicted_ite": 0.2107,
+      "retention_treated": 0.6055,
+      "retention_control": 0.3824,
+      "observed_uplift": 0.2232
+    },
+    {
+      "decile": 3,
+      "n": 211,
+      "mean_predicted_ite": 0.1436,
+      "retention_treated": 0.6667,
+      "retention_control": 0.5372,
+      "observed_uplift": 0.1295
+    },
+    {
+      "decile": 4,
+      "n": 211,
+      "mean_predicted_ite": 0.0821,
+      "retention_treated": 0.8,
+      "retention_control": 0.681,
+      "observed_uplift": 0.119
+    },
+    {
+      "decile": 5,
+      "n": 212,
+      "mean_predicted_ite": 0.0351,
+      "retention_treated": 0.8661,
+      "retention_control": 0.81,
+      "observed_uplift": 0.0561
+    },
+    {
+      "decile": 6,
+      "n": 211,
+      "mean_predicted_ite": 0.0124,
+      "retention_treated": 0.8788,
+      "retention_control": 0.7857,
+      "observed_uplift": 0.0931
+    },
+    {
+      "decile": 7,
+      "n": 211,
+      "mean_predicted_ite": 0.0025,
+      "retention_treated": 0.9674,
+      "retention_control": 0.916,
+      "observed_uplift": 0.0514
+    },
+    {
+      "decile": 8,
+      "n": 211,
+      "mean_predicted_ite": -0.0002,
+      "retention_treated": 0.9273,
+      "retention_control": 0.9703,
+      "observed_uplift": -0.043
+    },
+    {
+      "decile": 9,
+      "n": 211,
+      "mean_predicted_ite": -0.0027,
+      "retention_treated": 0.9561,
+      "retention_control": 0.9691,
+      "observed_uplift": -0.0129
+    },
+    {
+      "decile": 10,
+      "n": 212,
+      "mean_predicted_ite": -0.0139,
+      "retention_treated": 0.8761,
+      "retention_control": 0.9495,
+      "observed_uplift": -0.0734
+    }
+  ],
+  "uplift_deciles_holdout_churn_risk": [
+    {
+      "decile": 1,
+      "n": 212,
+      "mean_predicted_ite": 0.7468,
+      "retention_treated": 0.6262,
+      "retention_control": 0.2476,
+      "observed_uplift": 0.3785
+    },
+    {
+      "decile": 2,
+      "n": 211,
+      "mean_predicted_ite": 0.5994,
+      "retention_treated": 0.5648,
+      "retention_control": 0.4854,
+      "observed_uplift": 0.0794
+    },
+    {
+      "decile": 3,
+      "n": 211,
+      "mean_predicted_ite": 0.4719,
+      "retention_treated": 0.6804,
+      "retention_control": 0.5439,
+      "observed_uplift": 0.1366
+    },
+    {
+      "decile": 4,
+      "n": 211,
+      "mean_predicted_ite": 0.3423,
+      "retention_treated": 0.8,
+      "retention_control": 0.6825,
+      "observed_uplift": 0.1175
+    },
+    {
+      "decile": 5,
+      "n": 212,
+      "mean_predicted_ite": 0.2261,
+      "retention_treated": 0.7983,
+      "retention_control": 0.7204,
+      "observed_uplift": 0.0779
+    },
+    {
+      "decile": 6,
+      "n": 211,
+      "mean_predicted_ite": 0.1229,
+      "retention_treated": 0.8796,
+      "retention_control": 0.8447,
+      "observed_uplift": 0.035
+    },
+    {
+      "decile": 7,
+      "n": 211,
+      "mean_predicted_ite": 0.0685,
+      "retention_treated": 0.94,
+      "retention_control": 0.8919,
+      "observed_uplift": 0.0481
+    },
+    {
+      "decile": 8,
+      "n": 211,
+      "mean_predicted_ite": 0.0341,
+      "retention_treated": 0.9406,
+      "retention_control": 0.9545,
+      "observed_uplift": -0.014
+    },
+    {
+      "decile": 9,
+      "n": 211,
+      "mean_predicted_ite": 0.0166,
+      "retention_treated": 0.9815,
+      "retention_control": 0.9806,
+      "observed_uplift": 0.0009
+    },
+    {
+      "decile": 10,
+      "n": 212,
+      "mean_predicted_ite": 0.0069,
+      "retention_treated": 0.9633,
+      "retention_control": 1.0,
+      "observed_uplift": -0.0367
+    }
+  ],
+  "assumptions": {
+    "treatment_assignment": "Bernoulli(0.5) independent of covariates (a randomized A/B test), seed 42",
+    "control_outcome": "REAL observed retention (1 - churn)",
+    "treatment_effect_for_would_be_churners": "P(saved | would churn, treated at 10% discount) = tau(x), additive rules below, clipped to [0, 0.45]",
+    "tau_rules": {
+      "base": 0.05,
+      "monthly_charges>=70": 0.18,
+      "30<=monthly_charges<70": 0.08,
+      "month_to_month": 0.1,
+      "tenure<=12": 0.08,
+      "paperless_billing": 0.05,
+      "auto_pay": -0.05,
+      "protection_bundle": -0.06
+    },
+    "sleeping_dogs": "Treated non-churners with contract>=12m and tenure>24m churn with prob 0.04 (offer prompts plan review)",
+    "discount_depth": "effects calibrated to a 10% discount; other depths use a diminishing-returns multiplier (src/roi.py)"
+  },
+  "disclaimer": "SIMULATED treatment/control experiment; not experimentally validated causal evidence."
+}

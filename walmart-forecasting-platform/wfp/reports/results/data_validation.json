@@ -1,0 +1,26 @@
+{
+  "train_rows": 421570,
+  "stores_rows": 45,
+  "features_rows": 8190,
+  "n_stores": 45,
+  "n_depts": 81,
+  "n_store_dept_series": 3331,
+  "date_min": "2010-02-05",
+  "date_max": "2012-10-26",
+  "all_fridays": true,
+  "train_store_dates_missing_in_features": 0,
+  "stores_missing_in_stores_csv": [],
+  "isholiday_mismatch_rows": 0,
+  "negative_sales_rows": 1285,
+  "zero_sales_rows": 73,
+  "features_date_max": "2013-07-26",
+  "feature_nan_counts": {
+    "MarkDown1": 4158,
+    "MarkDown2": 5269,
+    "MarkDown3": 4577,
+    "MarkDown4": 4726,
+    "MarkDown5": 4140,
+    "CPI": 585,
+    "Unemployment": 585
+  }
+}
